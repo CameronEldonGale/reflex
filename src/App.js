@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './Twenty_sided_die.svg';
+import logo from './img/Twenty_sided_die.svg';
 import './App.css';
 import Clock from './clock'
+import Die from './die'
 
 class App extends Component {
 
@@ -14,8 +15,9 @@ class App extends Component {
           <Clock />
         </div>
         <p className="App-intro">
-
+          stuff here
         </p>
+        <Die sides='6' />
       </div>
     );
   }

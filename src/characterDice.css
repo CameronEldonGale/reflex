@@ -1,0 +1,15 @@
+.dice-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.die-btn{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.dice{
+  height: 80px;
+}

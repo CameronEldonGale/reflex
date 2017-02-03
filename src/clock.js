@@ -22,7 +22,7 @@ class Clock extends Component {
   }
 
   render() {
-     console.log(this.state.time);
+    //  console.log(this.state.time);
     return (
       <div>
         I'm a clock! {this.state.time.toLocaleTimeString()}
