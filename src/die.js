@@ -15,11 +15,9 @@ class Die extends Component {
                 angle: 0,
 
                 };
-   this.handleClick = this.handleClick.bind(this);
  }
 
- handleClick(){
-  //  console.log(   this.props.sides );
+ roll(){
    function getRandomIntInclusive(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
@@ -45,6 +43,18 @@ class Die extends Component {
 
  }
 
+ componentWillReceiveProps(nextProps){
+   if (nextProps.rolled !== this.props.rolled) {
+     this.roll()
+   }
+ }
+ componentDidUpdate(prevProps, prevState){
+   if (this.props.rolled !== prevProps.rolled) {
+     this.props.update(this.state.result)
+
+   }
+ }
+
 
   render() {
     var css = {
@@ -52,9 +62,8 @@ class Die extends Component {
     }
     return (
       <div className="dice-container">
-      <button className="die-btn" onClick={this.handleClick}>Roll <img src={dice} className="dice" alt="dice" /></button>
         <img src={this.state.img} className="dice" alt="die"  style={css}/>
-        <h2>{this.state.result}</h2>
+          <h2>{this.state.result}</h2>
       </div>
     );
   }
